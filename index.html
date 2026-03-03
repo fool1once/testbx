@@ -3,181 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bloodlust Philippines</title>
-
-<style>
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* BODY */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #0b0b0b;
-    color: white;
-    opacity: 0;
-    animation: fadeIn 1.5s ease forwards;
-}
-
-/* FADE IN ANIMATION */
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
-
-/* NAVBAR */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 20px;
-    background-color: black;
-    border-bottom: 2px solid #990000;
-}
-
-nav button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    position: relative;
-}
-
-nav button::after {
-    content: "";
-    display: block;
-    height: 2px;
-    width: 0%;
-    background: #990000;
-    transition: 0.3s;
-    margin-top: 5px;
-}
-
-nav button:hover::after {
-    width: 100%;
-}
-
-/* SECTIONS */
-.section {
-    display: none;
-    padding: 60px;
-    text-align: center;
-    animation: fadeSection 0.6s ease;
-}
-
-.section.active {
-    display: block;
-}
-
-@keyframes fadeSection {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* HERO */
-.hero {
-    margin-top: 40px;
-}
-
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.mission-vision {
-    margin-top: 40px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.mission-vision h2 {
-    margin-bottom: 10px;
-    color: #990000;
-}
-
-.mission-vision p {
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: black;
-    border-top: 2px solid #990000;
-    margin-top: 50px;
-}
-</style>
+<title>Bloodlust Philippines Corporation</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<nav>
-    <button onclick="showSection('home')">HOME</button>
-    <button onclick="showSection('info')">INFORMATION</button>
-    <button onclick="showSection('achievements')">ACHIEVEMENTS</button>
-    <button onclick="showSection('events')">EVENTS</button>
-</nav>
-
-<!-- HOME -->
-<div id="home" class="section active">
-    <div class="hero">
-        <h1>WELCOME TO BLOODLUST PHILIPPINES CORP.</h1>
-        <p>Building a strong esports community.</p>
+<!-- HEADER -->
+<header>
+    <div class="logo-area">
+        <img src="logo.png" alt="Bloodlust Logo">
+        <div class="brand-text">
+            BLOODLUST PHILIPPINES<br> CORPORATION
+        </div>
     </div>
 
-    <div class="mission-vision">
-        <h2>MISSION</h2>
-        <p>
-            To build a strong, supportive esports community that empowers players,
-            members, and creators through growth and partnerships.
-        </p>
+    <nav>
+        <a href="#" onclick="showSection('home')">HOME</a>
+        <a href="#" onclick="showSection('info')">INFORMATION</a>
+        <a href="#" onclick="showSection('achievements')">ACHIEVEMENTS</a>
+        <a href="#" onclick="showSection('events')">EVENTS</a>
+    </nav>
 
-        <h2>VISION</h2>
-        <p>
-            To become a respected name in global esports promoting excellence,
-            unity, and sportsmanship.
-        </p>
+    <!-- HAMBURGER -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+        ☰
     </div>
+</header>
+
+<!-- SLIDE MENU -->
+<div id="sideMenu" class="side-menu">
+    <a href="#">Games</a>
+    <a href="#">Tournaments</a>
+    <a href="#">Achievements</a>
 </div>
 
-<!-- INFORMATION -->
-<div id="info" class="section">
+<!-- HOME SECTION -->
+<section id="home" class="section active">
+    <div class="main-content">
+        <div class="left">
+            <img src="logo.png" class="big-logo">
+            <h1>WELCOME TO BLOODLUST<br>PHILIPPINES CORP.</h1>
+        </div>
+
+        <div class="right">
+            <h2>MISSION</h2>
+            <p>
+                To build a strong, supportive esports community that empowers players,
+                members and creators through growth, exposure and partnerships.
+                BloodLust Philippines nurtures competitive and creative talents in
+                a positive and inclusive environment.
+            </p>
+
+            <h2>VISION</h2>
+            <p>
+                To make BloodLust Philippines a respected name in global esports
+                promoting excellence, unity and sportsmanship across multiple
+                game titles and creating a thriving ecosystem for all gamers.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- OTHER SECTIONS -->
+<section id="info" class="section">
     <h1>INFORMATION</h1>
-    <p>Details about the organization, members, and goals.</p>
-</div>
+</section>
 
-<!-- ACHIEVEMENTS -->
-<div id="achievements" class="section">
+<section id="achievements" class="section">
     <h1>ACHIEVEMENTS</h1>
-    <p>List your tournaments, awards, and milestones here.</p>
-</div>
+</section>
 
-<!-- EVENTS -->
-<div id="events" class="section">
+<section id="events" class="section">
     <h1>EVENTS</h1>
-    <p>Upcoming and past esports events.</p>
-</div>
+</section>
 
-<footer>
-    © 2026 Bloodlust Philippines Corporation
-</footer>
-
-<script>
-function showSection(sectionId) {
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-        section.classList.remove('active');
-    });
-
-    document.getElementById(sectionId).classList.add('active');
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
