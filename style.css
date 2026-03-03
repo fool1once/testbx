@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: #000;
+    color: white;
+    overflow-x: hidden;
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: relative;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-area img {
+    width: 40px;
+}
+
+.brand-text {
+    font-size: 12px;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    font-size: 15px;
+}
+
+nav a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0%;
+    background: red;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* SIDE MENU */
+.side-menu {
+    position: absolute;
+    top: 80px;
+    right: 40px;
+    background: #111;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    border: 1px solid red;
+}
+
+.side-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 100px;
+}
+
+.left {
+    width: 50%;
+}
+
+.big-logo {
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+.left h1 {
+    font-size: 40px;
+}
+
+.right {
+    width: 40%;
+}
+
+.right h2 {
+    margin-top: 20px;
+    color: red;
+}
+
+.right p {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+/* SECTIONS */
+.section {
+    display: none;
+    animation: fadeSection 0.5s ease;
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes fadeSection {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
