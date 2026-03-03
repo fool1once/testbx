@@ -7,6 +7,5 @@ function showSection(id) {
 }
 
 function toggleMenu() {
-    const menu = document.getElementById("sideMenu");
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    document.getElementById("sideMenu").classList.toggle("active");
 }
