@@ -27,37 +27,23 @@ display:flex;
 justify-content:center;
 align-items:center;
 z-index:2000;
-text-align:center;
-}
-
-.intro-container{
-display:flex;
-flex-direction:column;
-align-items:center;
 }
 
 .intro-logo{
 width:200px;
-animation:introZoom 2.5s ease;
-}
-
-.intro-text{
-margin-top:20px;
-color:#ff2a2a;
-letter-spacing:3px;
-font-size:28px;
+animation:introZoom 2.5s ease, logoGlow 4s ease-in-out infinite alternate;
 }
 
 @keyframes introZoom{
 
 0%{
 opacity:0;
-transform:scale(.5);
+transform:scale(.6);
 }
 
 50%{
 opacity:1;
-transform:scale(1.2);
+transform:scale(1.15);
 }
 
 100%{
@@ -66,10 +52,26 @@ transform:scale(1);
 
 }
 
+/* SOFT LOGO GLOW (AURA EFFECT) */
+
+@keyframes logoGlow{
+
+0%{
+filter: drop-shadow(0 0 4px rgba(255,0,0,0.35))
+        drop-shadow(0 0 10px rgba(255,0,0,0.25));
+}
+
+100%{
+filter: drop-shadow(0 0 8px rgba(255,0,0,0.45))
+        drop-shadow(0 0 18px rgba(255,0,0,0.35));
+}
+
+}
+
 .intro-hide{
 opacity:0;
 visibility:hidden;
-transition:1s;
+transition:1.2s;
 }
 
 
@@ -90,6 +92,7 @@ gap:10px;
 
 .header-logo{
 width:40px;
+animation:logoGlow 4s ease-in-out infinite alternate;
 }
 
 .brand-text{
@@ -165,6 +168,7 @@ width:45%;
 .main-logo{
 width:240px;
 margin-bottom:20px;
+animation:logoGlow 4s ease-in-out infinite alternate;
 }
 
 .left h1{
@@ -204,7 +208,7 @@ display:block;
 }
 
 
-/* RED DESIGN FIX */
+/* RED DESIGN */
 
 .bottom-design{
 position:absolute;
@@ -218,15 +222,15 @@ border-top-right-radius:100% 60px;
 }
 
 
-/* SCROLL ANIMATION */
+/* SCROLL FADE EFFECT */
 
-.reveal{
+.fade-scroll{
 opacity:0;
 transform:translateY(40px);
-transition:1s;
+transition:opacity 0.8s ease, transform 0.8s ease;
 }
 
-.reveal.active{
+.fade-scroll.visible{
 opacity:1;
 transform:translateY(0);
 }
@@ -278,7 +282,7 @@ height:50px;
 }
 
 .intro-logo{
-width:140px;
+width:150px;
 }
 
 }
