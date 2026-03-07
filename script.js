@@ -19,30 +19,32 @@ window.addEventListener("load",function(){
 
 setTimeout(function(){
 document.getElementById("intro").classList.add("intro-hide");
-},3000);
+},3200);
 
 });
 
 
-/* SCROLL ANIMATION */
+/* SCROLL FADE EFFECT */
 
-function reveal(){
+const fadeElements=document.querySelectorAll(".fade-scroll");
 
-var reveals=document.querySelectorAll(".reveal");
+function checkFade(){
 
-for(var i=0;i<reveals.length;i++){
+const trigger=window.innerHeight * 0.85;
 
-var windowHeight=window.innerHeight;
-var elementTop=reveals[i].getBoundingClientRect().top;
-var visible=100;
+fadeElements.forEach(el=>{
 
-if(elementTop < windowHeight - visible){
-reveals[i].classList.add("active");
+const top=el.getBoundingClientRect().top;
+
+if(top < trigger){
+el.classList.add("visible");
+}else{
+el.classList.remove("visible");
 }
 
-}
+});
 
 }
 
-window.addEventListener("scroll",reveal);
-reveal();
+window.addEventListener("scroll",checkFade);
+checkFade();
