@@ -16,7 +16,7 @@ document.getElementById("sideMenu").classList.toggle("active");
 }
 
 
-/* INTRO ANIMATION */
+/* INTRO */
 
 window.addEventListener("load",function(){
 
@@ -24,12 +24,12 @@ setTimeout(function(){
 
 document.getElementById("intro").classList.add("intro-hide");
 
-},1800);
+},3500);
 
 });
 
 
-/* SCROLL REVEAL ANIMATION */
+/* SCROLL REVEAL */
 
 function reveal(){
 
@@ -50,4 +50,5 @@ reveals[i].classList.add("active");
 }
 
 window.addEventListener("scroll",reveal);
+
 reveal();
