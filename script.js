@@ -8,11 +8,8 @@ document.getElementById(id).classList.add("active");
 
 }
 
-
 function toggleMenu(){
-
 document.getElementById("sideMenu").classList.toggle("active");
-
 }
 
 
@@ -21,15 +18,13 @@ document.getElementById("sideMenu").classList.toggle("active");
 window.addEventListener("load",function(){
 
 setTimeout(function(){
-
 document.getElementById("intro").classList.add("intro-hide");
-
-},3500);
+},3000);
 
 });
 
 
-/* SCROLL REVEAL */
+/* SCROLL ANIMATION */
 
 function reveal(){
 
@@ -39,9 +34,9 @@ for(var i=0;i<reveals.length;i++){
 
 var windowHeight=window.innerHeight;
 var elementTop=reveals[i].getBoundingClientRect().top;
-var elementVisible=100;
+var visible=100;
 
-if(elementTop < windowHeight - elementVisible){
+if(elementTop < windowHeight - visible){
 reveals[i].classList.add("active");
 }
 
@@ -50,5 +45,4 @@ reveals[i].classList.add("active");
 }
 
 window.addEventListener("scroll",reveal);
-
 reveal();
