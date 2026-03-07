@@ -13,16 +13,10 @@ font-family:'Georgia',serif;
 background:#000;
 color:white;
 overflow-x:hidden;
-opacity:0;
-animation:fadeIn 1s forwards;
-}
-
-@keyframes fadeIn{
-to{opacity:1;}
 }
 
 
-/* INTRO SCREEN */
+/* INTRO */
 
 #intro{
 position:fixed;
@@ -35,25 +29,50 @@ display:flex;
 justify-content:center;
 align-items:center;
 z-index:2000;
+overflow:hidden;
+}
+
+.intro-bg{
+position:absolute;
+width:200%;
+height:200%;
+background:radial-gradient(circle,#ff000020,#000);
+animation:bgMove 8s linear infinite;
+}
+
+@keyframes bgMove{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+.intro-content{
+text-align:center;
+z-index:2;
 }
 
 .intro-logo{
 width:220px;
-opacity:0;
-transform:scale(.5);
-animation:logoPop 2.2s forwards;
+animation:introLogo 3s ease forwards;
 }
 
-@keyframes logoPop{
+.intro-title{
+margin-top:20px;
+color:#ff2a2a;
+letter-spacing:4px;
+opacity:0;
+animation:titleFade 3s forwards;
+}
+
+@keyframes introLogo{
 
 0%{
 opacity:0;
-transform:scale(.3);
+transform:scale(.5);
 }
 
-60%{
+50%{
 opacity:1;
-transform:scale(1.2);
+transform:scale(1.3);
 }
 
 100%{
@@ -62,11 +81,16 @@ transform:scale(1);
 
 }
 
-.intro-hide{
-animation:fadeOutIntro .8s forwards;
+@keyframes titleFade{
+0%{opacity:0;}
+100%{opacity:1;}
 }
 
-@keyframes fadeOutIntro{
+.intro-hide{
+animation:introFade .8s forwards;
+}
+
+@keyframes introFade{
 to{
 opacity:0;
 visibility:hidden;
@@ -74,10 +98,10 @@ visibility:hidden;
 }
 
 
-/* GLOWING LOGO */
+/* GLOW LOGO */
 
 .glow-logo{
-animation:logoGlow 3s infinite alternate;
+animation:logoGlow 2.5s infinite alternate;
 }
 
 @keyframes logoGlow{
@@ -87,7 +111,7 @@ filter:drop-shadow(0 0 5px #ff0000);
 }
 
 100%{
-filter:drop-shadow(0 0 20px #ff0000);
+filter:drop-shadow(0 0 25px #ff0000);
 }
 
 }
@@ -116,7 +140,6 @@ width:40px;
 font-size:12px;
 }
 
-
 nav{
 display:flex;
 gap:40px;
@@ -142,7 +165,6 @@ margin-top:5px;
 nav a:hover::after{
 width:100%;
 }
-
 
 .menu-toggle{
 font-size:26px;
@@ -192,12 +214,13 @@ width:50%;
 }
 
 .big-logo{
-width:250px;
+width:260px;
 margin-bottom:30px;
 }
 
 .left h1{
-font-size:40px;
+font-size:42px;
+line-height:1.3;
 }
 
 .right{
@@ -207,28 +230,30 @@ width:40%;
 .right h2{
 margin-top:20px;
 color:red;
+font-size:28px;
 }
 
 .right p{
 margin-top:10px;
-line-height:1.6;
+line-height:1.8;
+font-size:18px;
 }
 
 
-/* PAGE TRANSITION */
+/* SECTION */
 
 .section{
 display:none;
-animation:pageFade .6s ease;
 min-height:100vh;
 position:relative;
+animation:fadePage .6s;
 }
 
 .section.active{
 display:block;
 }
 
-@keyframes pageFade{
+@keyframes fadePage{
 from{
 opacity:0;
 transform:translateY(20px);
@@ -240,7 +265,7 @@ transform:translateY(0);
 }
 
 
-/* SCROLL REVEAL */
+/* SCROLL ANIMATION */
 
 .reveal{
 opacity:0;
@@ -262,10 +287,10 @@ position:absolute;
 bottom:0;
 left:0;
 width:100%;
-height:120px;
+height:90px;
 background:#a00000;
-border-top-left-radius:100% 80px;
-border-top-right-radius:100% 80px;
+border-top-left-radius:100% 70px;
+border-top-right-radius:100% 70px;
 }
 
 
@@ -273,13 +298,17 @@ border-top-right-radius:100% 80px;
 
 @media (max-width:900px){
 
+header{
+padding:20px;
+}
+
 nav{
 display:none;
 }
 
 .main-content{
 flex-direction:column;
-padding:40px 30px;
+padding:40px 25px;
 text-align:center;
 }
 
@@ -289,18 +318,28 @@ width:100%;
 
 .big-logo{
 width:180px;
+margin:auto;
+margin-bottom:20px;
 }
 
 .left h1{
 font-size:28px;
 }
 
-.right{
-margin-top:40px;
+.right h2{
+font-size:24px;
+}
+
+.right p{
+font-size:17px;
+}
+
+.section::after{
+height:60px;
 }
 
 .intro-logo{
-width:140px;
+width:150px;
 }
 
 }
