@@ -41,7 +41,7 @@ z-index:2000;
 width:220px;
 opacity:0;
 transform:scale(.5);
-animation:logoPop 1.2s forwards;
+animation:logoPop 2.2s forwards;
 }
 
 @keyframes logoPop{
