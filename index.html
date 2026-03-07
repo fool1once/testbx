@@ -1,82 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bloodlust Philippines Corporation</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+<div id="intro">
+<img src="logo.png" class="intro-logo">
+</div>
 
 <header>
-    <div class="logo-area">
-        <img src="logo.png" alt="Bloodlust Logo">
-        <div class="brand-text">
-            BLOODLUST PHILIPPINES<br> CORPORATION
-        </div>
-    </div>
 
-    <nav>
-        <a href="#" onclick="showSection('home')">HOME</a>
-        <a href="#" onclick="showSection('info')">INFORMATION</a>
-        <a href="#" onclick="showSection('achievements')">ACHIEVEMENTS</a>
-        <a href="#" onclick="showSection('events')">EVENTS</a>
-    </nav>
+<div class="logo-area">
+<img src="logo.png" class="glow-logo">
+<div class="brand-text">
+BLOODLUST PHILIPPINES<br> CORPORATION
+</div>
+</div>
 
-    
-    <div class="menu-toggle" onclick="toggleMenu()">
-        ☰
-    </div>
+<nav>
+<a href="#" onclick="showSection('home')">HOME</a>
+<a href="#" onclick="showSection('info')">INFORMATION</a>
+<a href="#" onclick="showSection('achievements')">ACHIEVEMENTS</a>
+<a href="#" onclick="showSection('events')">EVENTS</a>
+</nav>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+☰
+</div>
+
 </header>
 
 
 <div id="sideMenu" class="side-menu">
-    <a href="#">Games</a>
-    <a href="#">Tournaments</a>
-    <a href="#">Achievements</a>
+<a href="#">Games</a>
+<a href="#">Tournaments</a>
+<a href="#">Achievements</a>
 </div>
 
 
 <section id="home" class="section active">
-    <div class="main-content">
-        <div class="left">
-            <img src="logo.png" class="big-logo">
-            <h1>WELCOME TO BLOODLUST<br>PHILIPPINES CORP.</h1>
-        </div>
 
-        <div class="right">
-            <h2>MISSION</h2>
-            <p>
-                To build a strong, supportive esports community that empowers players,
-                members and creators through growth, exposure and partnerships.
-                BloodLust Philippines nurtures competitive and creative talents in
-                a positive and inclusive environment.
-            </p>
+<div class="main-content">
 
-            <h2>VISION</h2>
-            <p>
-                To make BloodLust Philippines a respected name in global esports
-                promoting excellence, unity and sportsmanship across multiple
-                game titles and creating a thriving ecosystem for all gamers.
-            </p>
-        </div>
-    </div>
+<div class="left reveal">
+<img src="logo.png" class="big-logo glow-logo">
+<h1>WELCOME TO BLOODLUST<br>PHILIPPINES CORP.</h1>
+</div>
+
+<div class="right reveal">
+
+<h2>MISSION</h2>
+<p>
+To build a strong, supportive esports community that empowers players,
+members and creators through growth, exposure and partnerships.
+BloodLust Philippines nurtures competitive and creative talents in
+a positive and inclusive environment.
+</p>
+
+<h2>VISION</h2>
+<p>
+To make BloodLust Philippines a respected name in global esports
+promoting excellence, unity and sportsmanship across multiple
+game titles and creating a thriving ecosystem for all gamers.
+</p>
+
+</div>
+
+</div>
+
 </section>
 
 
 <section id="info" class="section">
-    <h1>INFORMATION</h1>
+<h1 class="reveal">INFORMATION</h1>
 </section>
+
 
 <section id="achievements" class="section">
-    <h1>ACHIEVEMENTS</h1>
+<h1 class="reveal">ACHIEVEMENTS</h1>
 </section>
+
 
 <section id="events" class="section">
-    <h1>EVENTS</h1>
+<h1 class="reveal">EVENTS</h1>
 </section>
 
+
 <script src="script.js"></script>
+
 </body>
 </html>
